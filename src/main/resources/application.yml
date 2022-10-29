@@ -1,0 +1,26 @@
+app-name-2: main name
+
+config:
+  name: testing
+  #test: holaApp
+
+spring:
+  application:
+    name: hola
+
+rabbit:
+  host: localhost
+  port: 5672
+  username: guest
+  password: guest
+  virtualhost: "/"
+  publisher-returns: true
+  publisher-confirm-type: CORRELATED
+  config:
+    general-exchange:
+      name: "NP_GENERAL_EXCHANGE"
+      type: "TOPIC"
+    binding:
+      routing-key: "*.*.*.*.*.metadata"
+    metadata:
+      queue-name: "EVENTS-METADATA"
