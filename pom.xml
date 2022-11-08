@@ -15,18 +15,10 @@
     <artifactId>spring-boot-features</artifactId>
     <version>1.0.0</version>
 
-    <properties>
-        <java.version>18</java.version>
-        <maven.compiler.source>18</maven.compiler.source>
-        <maven.compiler.target>18</maven.compiler.target>
-
-    </properties>
-
     <dependencies>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
 
