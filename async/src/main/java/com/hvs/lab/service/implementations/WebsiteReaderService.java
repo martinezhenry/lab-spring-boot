@@ -8,10 +8,10 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class WebsiteReaderService implements IWebsiteReaderService {
 
-    private RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
 
-    public WebsiteReaderService(RestTemplate restTemplate){
-        this.restTemplate = restTemplate;
+    public WebsiteReaderService(){
+        this.restTemplate = new RestTemplate();
     }
 
     @Override

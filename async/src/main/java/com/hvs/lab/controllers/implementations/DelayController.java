@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DelayController implements IDelayController {
 
-    private IAsyncProcessorService asyncProcessorService;
+    private final IAsyncProcessorService asyncProcessorService;
 
     public DelayController(IAsyncProcessorService asyncProcessorService){
         this.asyncProcessorService = asyncProcessorService;
