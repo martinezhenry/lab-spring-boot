@@ -4,6 +4,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>async</module>
+        <module>soap-services</module>
+        <module>basics</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
