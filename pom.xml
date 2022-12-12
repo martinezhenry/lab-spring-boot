@@ -6,6 +6,7 @@
         <module>async</module>
         <module>soap-services</module>
         <module>basics</module>
+        <module>rest-services</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
