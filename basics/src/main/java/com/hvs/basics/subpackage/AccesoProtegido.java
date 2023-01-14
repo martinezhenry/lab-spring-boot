@@ -9,7 +9,7 @@ public class AccesoProtegido {
 
         System.out.println(modificadores.atributoPublic);
         System.out.println(modificadores.atributoProtegido);
-        System.out.println(modificadores.atributoPrivado);
+        //System.out.println(modificadores.atributoPrivado);
 
     }
 
