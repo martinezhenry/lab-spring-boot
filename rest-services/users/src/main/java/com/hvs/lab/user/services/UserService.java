@@ -16,7 +16,7 @@ public class UserService {
             user.setId(1);
             user.setName("Edinson");
             user.setSurname("Caceres");
-            user.setDni(1234567890);
+            user.setDni(1023456789);
             user.setBirthday(LocalDate.now());
             return user;
 
