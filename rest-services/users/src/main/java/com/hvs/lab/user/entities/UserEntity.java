@@ -3,18 +3,15 @@ package com.hvs.lab.user.entities;
 import lombok.Data;
 
 import java.time.LocalDate;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Data
 @Entity
-public class User {
+public class UserEntity {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
     private long dni;
     private String name;
