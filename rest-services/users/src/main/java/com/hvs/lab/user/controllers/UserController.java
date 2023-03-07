@@ -1,6 +1,7 @@
 package com.hvs.lab.user.controllers;
 
 import com.hvs.lab.user.exceptions.UserNotFoundException;
+import com.hvs.lab.user.exceptions.UserNotModifiedException;
 import com.hvs.lab.user.models.User;
 import com.hvs.lab.user.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class UserController {
     }
 
     @PutMapping
-    public User modifyUser(@RequestBody User user) throws UserNotFoundException {
+    public User modifyUser(@RequestBody User user) throws UserNotModifiedException {
         return this.userService.modifyUser(user);
     }
 
