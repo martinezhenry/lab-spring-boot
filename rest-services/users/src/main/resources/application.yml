@@ -1,14 +1,15 @@
 
 
 server:
-  port: 8081
+  port: ${ENV_PORT}
 
+scope: ${ENV_SCOPE}
 
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb
-    driverClassName: org.h2.Driver
-    username: sa
-    password: password
+    url: ${ENV_DB_URL:jdbc:h2:mem:testdb}
+    driverClassName: ${ENV_DB_CLASS}
+    username: ${ENV_DB_USER}
+    password: ${ENV_DB_PASS}
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect

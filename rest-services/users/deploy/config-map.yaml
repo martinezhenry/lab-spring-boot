@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  application.yaml: |
+    tags: new-tag
+
+  image.txt: |
+    texto cualequirew

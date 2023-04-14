@@ -16,7 +16,44 @@ spec:
     spec:
       containers:
         - name: user-api
-          image: users-api:latest
+          image: users-api:0.0.6
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8081
+            - containerPort: 8080
+          volumeMounts:
+            - name: config-vol
+              mountPath: /app/bin/application.yaml
+          env:
+            - name: "ENV_SCOPE"
+              value: "prod"
+            - name: "ENV_PORT"
+              value: "8080"
+            - name: "ENV_CONFIG"
+              value: "config.json"
+            - name: "ENV_DB_USER"
+              valueFrom:
+                secretKeyRef:
+                  name: secret-db
+                  key: user
+            - name: "ENV_DB_PASS"
+              valueFrom:
+                secretKeyRef:
+                  name: secret-db
+                  key: pass
+            - name: "ENV_DB_NAME"
+              valueFrom:
+                secretKeyRef:
+                  name: secret-db
+                  key: db-name
+            - name: "ENV_DB_URL"
+              value: "jdbc:h2:mem:testdb"
+            - name: "ENV_DB_CLASS"
+              value: "org.h2.Driver"
+
+      volumes:
+        - name: config-vol
+          configMap:
+            name: app-config
+            items:
+              - key: application.yaml
+                path: application.yaml
