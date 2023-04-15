@@ -12,7 +12,7 @@ Los usuarios deben tener los siguientes atributos:
 La url del API debe tener la siguiente estructura como base para 
 cada servicio. 
 
-`http://{hostname}/api/user`
+`http://{hostname}/api/userDTO`
 
 La informacion de los usuarios debe ser almacenada en una base de datos 
 (puede usar cualquier base de datos)

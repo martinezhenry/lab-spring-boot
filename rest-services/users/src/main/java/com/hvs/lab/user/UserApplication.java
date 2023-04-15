@@ -19,4 +19,16 @@ public class UserApplication {
     public static void main(String[] args) throws IOException {
         SpringApplication.run(UserApplication.class, args);
     }
+
+
+    /* TODO
+        - crear model book que representa el libro que maneja la biblioteca y
+          se deben definir los atributos de este modelo.
+        - Disenar modelo entidad relacion de base de datos mysql para la persistencia del API.
+        - Controlador(s) para los endpoints de los servicios del book.
+        - Disenar mecanismo para hacer el uso de los servicios de usuarios
+          y book(todo excepto lectura listar) restringindo.
+        - Implementar con principios SOLID
+    */
+
 }
