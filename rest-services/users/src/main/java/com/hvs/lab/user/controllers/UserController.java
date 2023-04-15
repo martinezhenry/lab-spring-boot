@@ -2,31 +2,34 @@ package com.hvs.lab.user.controllers;
 
 import com.hvs.lab.user.exceptions.UserNotFoundException;
 import com.hvs.lab.user.exceptions.UserNotModifiedException;
-import com.hvs.lab.user.models.User;
-import com.hvs.lab.user.services.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.hvs.lab.user.models.UserDTO;
+import com.hvs.lab.user.services.IUserService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/user")
 public class UserController {
 
-    @Autowired
-    private UserService userService;
+    private final IUserService userService;
+
+    public UserController(IUserService userService){
+        this.userService = userService;
+    }
 
     @GetMapping("{id}")
-    public User getUser(@PathVariable long id) throws UserNotFoundException {
+    public UserDTO getUser(@PathVariable long id) throws UserNotFoundException {
         return this.userService.getUser(id);
     }
 
 
     @PostMapping
-    public User createUser(@RequestBody User user){
-        return this.userService.createUser(user);
+    public UserDTO createUser(@RequestBody UserDTO userDTO){
+        return this.userService.createUser(userDTO);
     }
 
     @PutMapping
-    public User modifyUser(@RequestBody User user) throws UserNotModifiedException {
-        return this.userService.modifyUser(user);
+    public UserDTO modifyUser(@RequestBody UserDTO userDTO) throws UserNotModifiedException {
+        return this.userService.modifyUser(userDTO);
     }
 
 
@@ -36,7 +39,5 @@ public class UserController {
             throw new RuntimeException("User Not Deleted");
         }
     }
-
-
 
 }
