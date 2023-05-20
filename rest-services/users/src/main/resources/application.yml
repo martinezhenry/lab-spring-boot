@@ -6,10 +6,7 @@ server:
 scope: ${ENV_SCOPE:local}
 
 tags: newtags
-version: ${VERSION}
-
-tags: newtags
-version: ${VERSION}
+version: ${VERSION:1.1}
 
 spring:
   datasource:
