@@ -1,18 +1,12 @@
 package com.hvs.lab.user.controllers;
 
 import com.hvs.lab.user.exceptions.UserNotFoundException;
-import com.hvs.lab.user.exceptions.UserNotModifiedException;
-import com.hvs.lab.user.models.User;
-import com.hvs.lab.user.services.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.List;
 
 @RestController

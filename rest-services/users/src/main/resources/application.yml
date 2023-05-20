@@ -5,6 +5,9 @@ server:
 
 scope: ${ENV_SCOPE:local}
 
+tags: newtags
+version: ${VERSION}
+
 spring:
   datasource:
     url: ${ENV_DB_URL:jdbc:h2:mem:testdb}
