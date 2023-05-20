@@ -1,23 +1,42 @@
 package com.hvs.lab.user.controllers;
 
-
-import com.hvs.lab.user.exceptions.BookNotFoundException;
-import com.hvs.lab.user.models.Book;
-import com.hvs.lab.user.models.User;
-import com.hvs.lab.user.services.BookService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.hvs.lab.user.exceptions.UserNotFoundException;
+import com.hvs.lab.user.exceptions.UserNotModifiedException;
+import com.hvs.lab.user.models.BookDTO;
+import com.hvs.lab.user.services.IBookService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class BookController {
+@RequestMapping("/book")
+public class BookController implements IBookController {
 
-    @Autowired
-    private BookService bookService;
+    private final IBookService bookService;
 
-    @GetMapping("{id}")
-    public Book getBook(@PathVariable long id) throws BookNotFoundException {
-        return this.bookService.getBook(id);
+    public BookController(IBookService bookService){
+        this.bookService = bookService;
     }
 
+    @GetMapping("{id}")
+    public BookDTO get(@PathVariable long id) throws UserNotFoundException {
+        return this.bookService.get(id);
+    }
+
+    @PostMapping
+    public BookDTO createUser(@RequestBody BookDTO bookDTO){
+        return this.bookService.create(bookDTO);
+    }
+
+    @PutMapping
+    public BookDTO modifyUser(@RequestBody BookDTO bookDTO) throws UserNotModifiedException {
+        return this.bookService.modify(bookDTO);
+    }
+
+
+    @DeleteMapping("{id}")
+    public void deleteUser(@PathVariable long id) throws UserNotFoundException {
+        if (!this.bookService.delete(id)){
+            throw new RuntimeException("User Not Deleted");
+        }
+    }
 
 }
