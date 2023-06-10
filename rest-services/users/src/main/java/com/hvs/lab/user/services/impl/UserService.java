@@ -43,9 +43,7 @@ public class UserService implements IUserService {
 
     }
 
-
     public void getAllUsers(){}
-
 
     @Override
     public UserDTO createUser(UserDTO userDTO) {

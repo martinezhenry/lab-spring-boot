@@ -32,7 +32,6 @@ public class UserController {
         return this.userService.modifyUser(userDTO);
     }
 
-
     @DeleteMapping("{id}")
     public void deleteUser(@PathVariable long id) throws UserNotFoundException {
         if (!this.userService.deleteUser(id)){

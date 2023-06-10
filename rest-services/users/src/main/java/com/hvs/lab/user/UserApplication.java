@@ -20,7 +20,6 @@ public class UserApplication {
         SpringApplication.run(UserApplication.class, args);
     }
 
-
     /* TODO
         - crear model book que representa el libro que maneja la biblioteca y
           se deben definir los atributos de este modelo.

@@ -7,6 +7,8 @@ import java.time.LocalDate;
 @Data
 public class BookDTO {
     private long id;
-    // TODO agregar nuevos atributos
+    private long ISNB;
+    private String titulo;
+    private String descripcion;
 
 }
