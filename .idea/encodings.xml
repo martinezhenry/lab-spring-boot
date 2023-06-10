@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/async/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/basics/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hash-search/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rest-services/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rest-services/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rest-services/users/src/main/java" charset="UTF-8" />

@@ -1,18 +1,14 @@
-package com.hvs.lab.user.controllers;
+package com.hvs.lab.user.controllers.impl;
 
-import com.hvs.lab.user.exceptions.BookNotFoundException;
-import com.hvs.lab.user.exceptions.BookNotModifiedException;
-import com.hvs.lab.user.exceptions.UserNotFoundException;
-import com.hvs.lab.user.exceptions.UserNotModifiedException;
+import com.hvs.lab.user.controllers.IBookController;
+import com.hvs.lab.user.exceptions.*;
 import com.hvs.lab.user.models.BookDTO;
 import com.hvs.lab.user.services.IBookService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/book")
-public class BookController
-//        implements IBookController
-{
+public class BookController implements IBookController {
 
     private final IBookService bookService;
 
@@ -26,12 +22,12 @@ public class BookController
     }
 
     @PostMapping
-    public BookDTO create(@RequestBody BookDTO bookDTO){
+    public BookDTO create(@RequestBody BookDTO bookDTO) throws GeneralException {
         return this.bookService.create(bookDTO);
     }
 
     @PutMapping
-    public BookDTO modify(@RequestBody BookDTO bookDTO) throws BookNotModifiedException {
+    public BookDTO modify(@RequestBody BookDTO bookDTO) throws BookNotModifiedException, GeneralException {
         return this.bookService.modify(bookDTO);
     }
 
