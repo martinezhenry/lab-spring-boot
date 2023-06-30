@@ -15,6 +15,7 @@ public class BookTCPController implements IBookController {
 
     public boolean connection() throws IOException {
         Socket socket = new Socket("", 1000);
+        return true;
     }
 
     @Override

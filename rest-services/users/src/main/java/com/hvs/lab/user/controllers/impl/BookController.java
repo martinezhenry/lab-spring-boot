@@ -16,6 +16,11 @@ public class BookController implements IBookController {
         this.bookService = bookService;
     }
 
+
+    public String get2() {
+        return "Hello World!!!";
+    }
+
     @GetMapping("{id}")
     public BookDTO get(@PathVariable long id) throws BookNotFoundException {
         return this.bookService.get(id);
