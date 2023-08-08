@@ -15,19 +15,51 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.Serial;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Optional;
 
+/**
+ * skfjsdfsdkfb
+ * como se usa aksfjdnskjfsnkdf
+ *
+ * wejchsamefks
+ * aaasckjsnc
+ *
+ * scskjcs
+ * jasskcnsdc
+ *
+ * asdjsndjas
+ * asjanscjs
+ *
+ * acjanscjsdncsjcsc
+ *
+ * @version 1.0.2
+ */
 @Service
 @Slf4j
-public class BookService implements IBookService, ICreate {
+public class BookService implements IBookService, ICreate, Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 999L;
 
     private final BookRepository bookRepository;
 
     public BookService(BookRepository bookRepository){
         this.bookRepository = bookRepository;
+        var list = new ArrayList<>();
+
+        var otra = 10L;
     }
 
 
+    /**
+     * Metodo para obtener un libro alamacenado en la BD a traves de su identificador unico
+     * @param id Identificador del libro
+     * @return BookDTO Objecto que representa el libro
+     * @throws BookNotFoundException Excepcion disparada si el libro buscado no es encontrado
+     */
     @Override
     public BookDTO get(long id) throws BookNotFoundException {
 
@@ -110,6 +142,12 @@ public class BookService implements IBookService, ICreate {
 
     }
 
+    /**
+     *
+     * @param bookDTO
+     * @return
+     * @throws GeneralException
+     */
     @Override
     public BookDTO create(BookDTO bookDTO) throws GeneralException {
         if (bookDTO.getId() > 0) {

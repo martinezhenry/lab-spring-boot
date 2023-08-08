@@ -26,7 +26,6 @@ class UserControllerTest {
 
         Mockito.when(userService.getUser(Mockito.any())).thenReturn(new UserDTO());
 
-        Mockito
     }
 
 

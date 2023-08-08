@@ -10,13 +10,25 @@ import java.io.IOException;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * Clase principal en donde se inicia la aplicacion con el metodo main y SpringBoot
+ * @author Henry Martinez (henry.martinezd@gmail.com)
+ */
 @SpringBootApplication
 @Slf4j
 public class UserApplication {
 
+    /**
+     * variable que indica el ambiente en que se esta desplegando la aplicacion posibles valires (dev, stage, prod)
+     */
     @Value("${scope}")
     private static String scope;
-    public static void main(String[] args) throws IOException {
+
+    /**
+     * Metodo principal de la aplicacion
+     * @param args argumentos que recibe la aplicacion al momento de su ejecucion
+     */
+    public static void main(String[] args) {
         SpringApplication.run(UserApplication.class, args);
     }
 

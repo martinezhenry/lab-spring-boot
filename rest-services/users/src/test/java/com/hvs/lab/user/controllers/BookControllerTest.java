@@ -6,6 +6,7 @@ import com.hvs.lab.user.models.BookDTO;
 import com.hvs.lab.user.services.impl.BookService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,7 +23,8 @@ public class BookControllerTest {
 
 
     @Test
-    void get2SuccessfulTest() {
+    @Timeout(1)
+    void get2SuccessfulTest() throws InterruptedException {
         // Given
         var bookController = new BookController(null);
 
@@ -31,8 +33,10 @@ public class BookControllerTest {
 
         // Then
         var expectedResult = "Hello World!!!";
+        Assertions.assertNotNull(result);
         Assertions.assertEquals(expectedResult, result);
         Assertions.assertFalse((result.length() > 20));
+
     }
 
     @Test
