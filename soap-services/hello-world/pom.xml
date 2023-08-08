@@ -5,14 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.hvs.lab</groupId>
-        <artifactId>spring-boot-features</artifactId>
+        <artifactId>soap-services</artifactId>
         <version>1.0.0</version>
-        <relativePath>../../pom.xml</relativePath>
     </parent>
-    <packaging>jar</packaging>
 
-    <groupId>com.hvs.lib</groupId>
-    <artifactId>compras</artifactId>
+    <artifactId>hello-world</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

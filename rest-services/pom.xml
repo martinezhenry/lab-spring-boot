@@ -13,7 +13,6 @@
 
     <modules>
         <module>users</module>
-        <module>compras</module>
     </modules>
 
 

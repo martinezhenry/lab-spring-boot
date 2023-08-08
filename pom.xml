@@ -8,7 +8,6 @@
         <module>basics</module>
         <module>rest-services</module>
         <module>hash-search</module>
-        <module>rest-services/compras</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

@@ -7,6 +7,10 @@
         <version>1.0.0</version>
     </parent>
     <artifactId>soap-services</artifactId>
+    <packaging>pom</packaging>
     <name>Archetype - soap-services</name>
     <url>http://maven.apache.org</url>
+    <modules>
+        <module>hello-world</module>
+    </modules>
 </project>

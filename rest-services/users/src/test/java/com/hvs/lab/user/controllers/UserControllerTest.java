@@ -55,7 +55,7 @@ class UserControllerTest {
         Mockito.when(userService.getUser(userId)).thenThrow(exceptionExpected);
 
         // When
-        Assertions.assertDoesNotThrow(() -> {
+        Assertions.assertThrows(UserNotFoundException.class, () -> {
             var user = userController.getUser(userId);
             Assertions.assertNotNull(user);
         });
